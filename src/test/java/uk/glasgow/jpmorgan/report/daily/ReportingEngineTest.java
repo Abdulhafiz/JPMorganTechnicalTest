@@ -42,6 +42,9 @@ public class ReportingEngineTest {
 
     @Before
     public void setUp() throws Exception {
+    	
+    	reportingEngine = new ReportingEngine();
+    	
         // Weekends for SAR-Friday and AED-Saturday
         instruction1 =
                 new Instruction(1l, "foo", "B", 0.50d, "SAR", getInputDate(2016, Calendar.JANUARY, 1), getInputDate(2016,
@@ -91,6 +94,7 @@ public class ReportingEngineTest {
 
     @After
     public void tearDown() throws Exception {
+    	reportingEngine = null;
 
     }
 
@@ -147,7 +151,7 @@ public class ReportingEngineTest {
     public void testExecuteTradeForSARNewSettelementDateForWeekdays() throws InvalidTradeInputException {
         Instruction instruction = reportingEngine.executeTrade(instruction6);
         Date validatedSettlementDate = instruction.getSettlementDate().getTime();
-        Assert.assertTrue(validatedSettlementDate.compareTo(getInputDate(2016, Calendar.JANUARY, 5).getTime()) == 0);
+        Assert.assertEquals(validatedSettlementDate, getInputDate(2016, Calendar.JANUARY, 5).getTime());
 
     }
 
@@ -159,7 +163,7 @@ public class ReportingEngineTest {
     public void testExecuteTradeForGBPNewSettelementDateForWeekdays() throws InvalidTradeInputException {
         Instruction instruction = reportingEngine.executeTrade(instruction5);
         Date validatedSettlementDate = instruction.getSettlementDate().getTime();
-        Assert.assertTrue(validatedSettlementDate.compareTo(getInputDate(2016, Calendar.JANUARY, 5).getTime()) == 0);
+        Assert.assertEquals(validatedSettlementDate, getInputDate(2016, Calendar.JANUARY, 5).getTime());
     }
 
     /**
