@@ -1,0 +1,6 @@
+uk\glasgow\jpmorgan\report\daily\util\ReportingConstant.class
+uk\glasgow\jpmorgan\report\daily\trade\Instructions.class
+uk\glasgow\jpmorgan\report\daily\error\InvalidTradeInputException.class
+uk\glasgow\jpmorgan\report\daily\trade\Instruction.class
+uk\glasgow\jpmorgan\report\daily\util\CurrencyType.class
+uk\glasgow\jpmorgan\report\daily\trade\ReportingEngine.class
