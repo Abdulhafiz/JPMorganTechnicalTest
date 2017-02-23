@@ -26,7 +26,7 @@ public class ReportingEngineTest {
 
     public static final Logger LOGGER = Logger.getLogger(ReportingEngineTest.class);
     
-    private ReportingEngine reportingEngine = new ReportingEngine();
+    ReportingEngine reportingEngine = null; 
     Instruction instruction1 = null;
     Instruction instruction2 = null;
     Instruction instruction3 = null;
